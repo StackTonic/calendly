@@ -16,7 +16,6 @@ class Webhooks extends Api {
         $this->uri = '/webhook_subscriptions';
     }
     public function create($url, $events, $organization,$scope,$signing_key,$user=null){
-        var_dump($events);
         $response = $this->request(
             'post',
             $this->uri,
@@ -33,7 +32,6 @@ class Webhooks extends Api {
             null,
             null
         );
-        var_dump($response->getContent());
         return new WebHook($response->getContent());
 
     }
