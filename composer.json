@@ -1,0 +1,19 @@
+{
+    "name": "stacktonic/calendly",
+    "description": "PHP Wrapper for the calendly API",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^7.2|^8.0",
+      "ext-curl": "*",
+      "ext-json": "*"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^6.3 || ^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "StackTonic\\Calendly\\": "src/StackTonic/Calendly"
+        }
+    }
+}
