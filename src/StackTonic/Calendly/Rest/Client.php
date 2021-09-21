@@ -67,7 +67,7 @@ class Client {
         array $headers = [],
         string $username = null,
         string $password = null,
-        int $timeout = null): \StackTonic\Calendly\Http\Response {
+        int $timeout = null) {
         $username = $username;
         $password = $password;
 
