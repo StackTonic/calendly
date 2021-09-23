@@ -25,6 +25,7 @@ class EventType {
     public $secret;
     public $custom_questions;
     public $current_organization;
+    public $uuid;
 
     public function __construct($raw) {
         $this->uri = $raw['uri'];
@@ -48,5 +49,7 @@ class EventType {
         foreach ($raw['custom_questions'] as $cq) {
             $this->custom_questions[] = new CustomQuestions($cq);
         }
+        $arr =  explode('/',$this->uri);
+        $this->uuid = $arr[count($arr)-1];
     }
 }

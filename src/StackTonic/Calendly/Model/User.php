@@ -13,6 +13,7 @@ class User {
     public $created_at;
     public $updated_at;
     public $current_organization;
+    public $uuid;
 
     public function __construct($raw) {
         $this->uri = $raw['uri'];
@@ -25,5 +26,7 @@ class User {
         $this->created_at = $raw['created_at'];
         $this->updated_at = $raw['updated_at'];
         $this->current_organization = $raw['current_organization'];
+        $arr =  explode('/',$this->uri);
+        $this->uuid = $arr[count($arr)-1];
     }
 }

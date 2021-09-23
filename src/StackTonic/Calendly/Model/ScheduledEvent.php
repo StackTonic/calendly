@@ -16,6 +16,7 @@ class ScheduledEvent {
     public $invitees_counter;
     public $created_at;
     public $updated_at;
+    public $uuid;
 
     public function __construct($raw) {
         $this->uri = $raw['uri'];
@@ -32,6 +33,7 @@ class ScheduledEvent {
         $this->event_memberships = $raw['event_memberships'];
         $this->event_guests = [];
         $this->event_guests = $raw['event_guests'];
-
+        $arr =  explode('/',$this->uri);
+        $this->uuid = $arr[count($arr)-1];
     }
 }
